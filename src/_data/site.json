@@ -1,0 +1,10 @@
+{
+  "title": "Github Issues as a CMS",
+  "description": "A blog that uses a Github repository's issues as a headless CMS",
+  "url": "",
+  "socialImage": "",
+  "showComments": true,
+  "showLabels": true,
+  "repository": "edjw/github-issue-blog",
+  "Cloudinary_Cloud_Name": "ed-johnson-williams"
+}

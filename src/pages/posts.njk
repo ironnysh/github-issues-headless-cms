@@ -1,0 +1,10 @@
+---
+title: "Posts"
+layout: "layouts/allPosts.njk"
+permalink: "posts{% if pagination.pageNumber > 0 %}/{{ pagination.pageNumber }}{% endif %}/index.html"
+pagination:
+  data: GithubIssues
+  size: 10
+---
+
+This is a list of all posts.

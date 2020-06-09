@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ site.title }}</title>
+        {% include "partials/metatags.njk" %}
+
+        {% set css %}
+        {% include "../../assets/css/reset.css" %}
+        {% include "../../assets/css/styles.css" %}
+        {% endset %}
+        <style>
+            {{css | cssmin | safe}}
+        </style>
+    </head>
+    <body class="container">
+        {% include "partials/header.njk" %}
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        {% block footer %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,62 @@
+---
+pagination:
+    data: GithubIssues
+    size: 1
+    alias: post
+permalink: "/post/{{post.title | string | slug }}-{{ post.id | string | slug }}/"
+layout: "layouts/post.njk"
+---
+
+{% block content %}
+    <article>
+        {% if post.title %}
+            <h2 class="pageTitle">
+                {{ post.title }}
+            </h2>
+        {% endif %}
+
+        <p class="postDateTime">
+            <time datetime="{{ post.date }}">{{ post.date | dateFilter }}</time>
+        </p>
+
+        {% if post.content %}
+            {{ post.content | markdownify | safe }}
+        {% endif %}
+
+        {% if post.tags %}
+            <p>Tags</p>
+            <ul class="tagList">
+                {% for tag in post.tags %}
+                    <li class="tag">{{ tag.name }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <a href="{{post.url}}">See post on Github</a>
+
+        {% if post.comments %}
+
+            <ul class="commentsList">
+                {% for comment in post.comments %}
+                    <li class="comment">
+
+                        <img class="commentAvatar" src="{% if site.Cloudinary_Cloud_Name %}https://res.cloudinary.com/{{ site.Cloudinary_Cloud_Name }}/image/fetch/w_100,h_100,f_auto/{% endif %}{{ comment.userAvatar }}" alt="avatar of {{ comment.user }}" width=50 height=50>
+
+                        <p class="commentUser">
+                            <a href="https://github.com/{{ comment.user }}">{{ comment.user }}</a>
+                        </p>
+                        <p class="commentDateTime">
+                            <time datetime="{{ comment.date }}">{{ comment.date | dateFilter }}</time>
+                        </p>
+                        <p class="commentContent">{{ comment.content | markdownify | safe }}</p>
+                        <p>
+                            <a class="commentURL" href="{{ comment.url}}">See original comment</a>
+                        </p>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <a href="https://github.com/edjw/github-issue-blog/issues/{{ post.id | string }}#issue-comment-box">Leave a comment</a>
+        {% endif %}
+    </article>
+{% endblock %}

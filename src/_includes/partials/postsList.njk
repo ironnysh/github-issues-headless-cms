@@ -1,0 +1,15 @@
+<h2 class="pageTitle">All posts</h2>
+<ul class="postsList">
+    {% for post in pagination.items %}
+        <li class="post">
+            <article>
+                <p class="postDateTime">
+                    <time datetime="{{ post.date }}">{{ post.date | dateFilter }}</time>
+                </p>
+                <h3 class="postTitle">
+                    <a href="/post/{{post.title | string | slug }}-{{ post.id | string | slug }}">{{ post.title }}</a>
+                </h3>
+            </article>
+        </li>
+    {% endfor %}
+</ul>
