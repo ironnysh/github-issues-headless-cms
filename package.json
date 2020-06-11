@@ -1,11 +1,14 @@
 {
-  "name": "ed-johnson-williams",
-  "description": "Ed Johnson-Williams' personal website",
+  "name": "github-issues-as-headless-cms",
+  "description": "Use Github Issues as a headless CMS",
   "scripts": {
     "start": "yarn run dev",
     "build": "cross-env ELEVENTY_ENV=production yarn eleventy",
     "dev": "cross-env ELEVENTY_ENV=development yarn eleventy --serve",
-    "debug": "cross-env DEBUG=* yarn eleventy"
+    "debug": "cross-env DEBUG=* yarn eleventy",
+    "clean:cache": "rm -rf .cache && yarn eleventy",
+    "clean:build": "rm -rf _site",
+    "clean": "clean:build && clean:cache"
   },
   "license": "MIT",
   "devDependencies": {
