@@ -1,13 +1,13 @@
 <h2 class="pageTitle">Latest posts</h2>
 <ul class="postsList">
 
-{% set numberOfPostsToShow = 4 %}
+    {% set numberOfPostsToShow = 4 %}
 
-{% if GithubIssues | length >= numberOfPostsToShow %}
-    {% set numberOfPosts = numberOfPostsToShow %}
-{% else %}
-    {% set numberOfPosts = GithubIssues | length %}
-{% endif %}
+    {% if GithubIssues | length >= numberOfPostsToShow %}
+        {% set numberOfPosts = numberOfPostsToShow %}
+    {% else %}
+        {% set numberOfPosts = GithubIssues | length %}
+    {% endif %}
 
     {% for i in range(0, numberOfPosts) %}
         <li class="post">
@@ -16,7 +16,7 @@
                     <time datetime="{{ GithubIssues[i].date }}">{{ GithubIssues[i].date | dateFilter }}</time>
                 </p>
                 <h3 class="postTitle">
-                    <a href="/post/{{GithubIssues[i].title | string | slug }}-{{ GithubIssues[i].id | string | slug }}">{{ GithubIssues[i].title }}</a>
+                    <a href="/post/{{GithubIssues[i].title | string | customSlug }}-{{ GithubIssues[i].id | string | customSlug }}">{{ GithubIssues[i].title }}</a>
                 </h3>
             </article>
         </li>

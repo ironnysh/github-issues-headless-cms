@@ -1,6 +1,7 @@
 const env = process.env.ELEVENTY_ENV;
 const dateFilter = require("./src/filters/date-filter.js");
 const markdownify = require("./src/filters/markdownify.js");
+const customSlug = require("./src/filters/customSlug.js");
 const cssmin = require("./src/filters/cssmin.js");
 const htmlMin = require("./src/transforms/html-min.js");
 const Cloudinary_Cloud_Name = require("./src/_data/site.json")
@@ -13,6 +14,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("dateFilter", dateFilter);
   eleventyConfig.addFilter("markdownify", markdownify);
   eleventyConfig.addFilter("cssmin", cssmin);
+  eleventyConfig.addFilter("customSlug", customSlug);
 
   // Transforms
   if (env === "production") {
