@@ -1,7 +1,8 @@
 {
   "title": "Github Issues as a CMS",
+  "author": "Ed Johnson-Williams",
   "description": "A blog that uses a Github repository's issues as a headless CMS",
-  "url": "",
+  "url": "https://github-issues-headless-cms.netlify.app",
   "socialImage": "",
   "showComments": true,
   "showLabels": true,

@@ -7,10 +7,10 @@
 {% endblock %}
 
 {% block footer %}
-{% if GithubIssues | length > 4 %}
-    <footer>
-        <a href="/posts" class="see_all">See all posts</a>
-    </footer>
-{% endif %}
-  
+    {% if GithubIssues | length > 4 %}
+        <footer>
+            <a href="/posts" class="see_all">See all posts</a>
+        </footer>
+    {% endif %}
+
 {% endblock %}

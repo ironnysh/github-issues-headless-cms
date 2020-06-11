@@ -3,8 +3,11 @@ pagination:
     data: GithubIssues
     size: 1
     alias: post
+    addAllPagesToCollections: true
+tags: allPosts
 permalink: "/post/{{post.title | string | slug }}-{{ post.id | string | slug }}/"
 layout: "layouts/post.njk"
+title: {{ post.title | string }}
 ---
 
 {% block content %}
@@ -32,7 +35,9 @@ layout: "layouts/post.njk"
             </ul>
         {% endif %}
 
-        <a href="{{post.url}}">See post on Github</a>
+        <p>
+            <a href="{{ post.url }}">See post on Github</a>
+        </p>
 
         {% if post.comments %}
 
@@ -40,7 +45,7 @@ layout: "layouts/post.njk"
                 {% for comment in post.comments %}
                     <li class="comment">
 
-                        <img class="commentAvatar" src="{% if site.Cloudinary_Cloud_Name %}https://res.cloudinary.com/{{ site.Cloudinary_Cloud_Name }}/image/fetch/w_100,h_100,f_auto/{% endif %}{{ comment.userAvatar }}" alt="avatar image of {{ comment.user }}" width=50 height=50>
+                        <img class="commentAvatar" src="{% if site.Cloudinary_Cloud_Name %}https://res.cloudinary.com/{{ site.Cloudinary_Cloud_Name }}/image/fetch/w_100,h_100,f_auto/{% endif %}{{ comment.userAvatar }}" alt="avatar image of {{ comment.user }}" width="50" height="50">
 
                         <p class="commentUser">
                             <a href="https://github.com/{{ comment.user }}">{{ comment.user }}</a>
