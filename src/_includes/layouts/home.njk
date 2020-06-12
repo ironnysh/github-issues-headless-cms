@@ -4,13 +4,7 @@
     {{ content | safe }}
 
     {% include "partials/recentPosts.njk" %}
-{% endblock %}
-
-{% block footer %}
     {% if GithubIssues | length > 4 %}
-        <footer>
-            <a href="/posts" class="see_all">See all posts</a>
-        </footer>
+        <a href="/posts" class="see_all">See all posts</a>
     {% endif %}
-
 {% endblock %}
