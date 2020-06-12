@@ -12,7 +12,7 @@ const addZero = (number) => {
 };
 
 module.exports = function dateFilter(value) {
-  const dateObject = new Date(value);
+  const dateObject = new Date(value).toLocaleString("en-GB");
 
   const months = [
     "January",

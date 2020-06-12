@@ -7,7 +7,7 @@
                     <time datetime="{{ post.date }}">{{ post.date | dateFilter }}</time>
                 </p>
                 <h3 class="postTitle">
-                    <a href="/post/{{post.title | string | customSlug }}-{{ post.id | string | customSlug }}">{{ post.title }}</a>
+                    <a href="/post/{{post.title | string | slug }}-{{ post.id | string | slug }}">{{ post.title }}</a>
                 </h3>
             </article>
         </li>

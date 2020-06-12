@@ -14,7 +14,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("dateFilter", dateFilter);
   eleventyConfig.addFilter("markdownify", markdownify);
   eleventyConfig.addFilter("cssmin", cssmin);
-  eleventyConfig.addFilter("customSlug", customSlug);
+  eleventyConfig.addFilter("slug", customSlug);
 
   // Transforms
   if (env === "production") {

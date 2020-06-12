@@ -16,7 +16,7 @@
                     <time datetime="{{ GithubIssues[i].date }}">{{ GithubIssues[i].date | dateFilter }}</time>
                 </p>
                 <h3 class="postTitle">
-                    <a href="/post/{{GithubIssues[i].title | string | customSlug }}-{{ GithubIssues[i].id | string | customSlug }}">{{ GithubIssues[i].title }}</a>
+                    <a href="/post/{{GithubIssues[i].title | string | slug }}-{{ GithubIssues[i].id | string | slug }}">{{ GithubIssues[i].title }}</a>
                 </h3>
             </article>
         </li>
