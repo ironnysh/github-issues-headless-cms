@@ -4,6 +4,7 @@
   "description": "A blog that uses a Github repository's issues as a headless CMS",
   "url": "https://github-issues-headless-cms.netlify.app",
   "socialImage": "",
+  "useTitles": false,
   "showComments": true,
   "showLabels": true,
   "repository": "edjw/github-issues-headless-cms",

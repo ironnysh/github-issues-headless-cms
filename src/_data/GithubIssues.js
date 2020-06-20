@@ -29,36 +29,34 @@ async function getComments(issueNumber) {
     );
     // console.log(commentsToKeep);
     return commentsToKeep;
-
   } catch (error) {
-    console.log(
-      `${error}`
-    );
+    console.log(`${error}`);
     return;
   }
-
 }
 
-
-
 async function getIssues(repository) {
-
   try {
-    let json = await Cache(`https://api.github.com/repos/${repository}/issues`, {
-      duration: "1d",
-      type: "json",
-    });
+    let json = await Cache(
+      `https://api.github.com/repos/${repository}/issues`,
+      {
+        duration: "1d",
+        type: "json",
+      }
+    );
     if (json.length > 0) {
       let issues = await Promise.all(
         json.map(async (issue) => {
           return {
-            id: String(issue.number),
+            id: String(issue.id),
             url: issue.html_url,
             title: issue.title,
             content: issue.body,
             date: issue.created_at,
             tags:
-              showLabels == true && issue.labels.length > 0 ? issue.labels : false,
+              showLabels == true && issue.labels.length > 0
+                ? issue.labels
+                : false,
             comments:
               showComments == true && issue.comments > 0
                 ? await getComments(String(issue.number))
@@ -70,17 +68,14 @@ async function getIssues(repository) {
       // console.log(issues);
 
       return issues;
-    }
-
-    else {
-      console.warn("\n\n***No Github Issues found.You might need to add your Github repository in `_data/site.json` and add at least 1 issue to that repository.***\n\n")
+    } else {
+      console.warn(
+        "\n\n***No Github Issues found.You might need to add your Github repository in `_data/site.json` and add at least 1 issue to that repository.***\n\n"
+      );
     }
   } catch (error) {
-    console.log(
-      `${error}`
-    );
+    console.log(`${error}`);
   }
-
 }
 
 module.exports = async function () {

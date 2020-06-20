@@ -12,12 +12,27 @@
     {% for i in range(0, numberOfPosts) %}
         <li class="post">
             <article>
-                <p class="postDateTime">
-                    <time datetime="{{ GithubIssues[i].date }}">{{ GithubIssues[i].date | dateFilter }}</time>
-                </p>
-                <h3 class="postTitle">
-                    <a href="/post/{{GithubIssues[i].title | string | slug }}-{{ GithubIssues[i].id | string | slug }}">{{ GithubIssues[i].title }}</a>
-                </h3>
+                {% if site.useTitles %}
+
+                    <p class="postDateTime">
+                        <time datetime="{{ GithubIssues[i].date }}">{{ GithubIssues[i].date | dateFilter }}</time>
+                    </p>
+                    <h3 class="postTitle">
+                        <a href="/post/{{ GithubIssues[i].title | string | slug }}-{{ GithubIssues[i].id | string | slug }}">{{ GithubIssues[i].title }}</a>
+                    </h3>
+
+                {% else %}
+
+                    <h3 class="postDateTime">
+                        <a href="/post/{{ GithubIssues[i].id | string | slug }}/">
+                            <time datetime="{{ GithubIssues[i].date }}">{{ GithubIssues[i].date | dateFilter }}</time>
+                        </a>
+                    </h3>
+                    <section class="postContent">
+                        {{ GithubIssues[i].content }}
+                    </section>
+
+                {% endif %}
             </article>
         </li>
     {% endfor %}

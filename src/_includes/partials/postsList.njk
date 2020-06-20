@@ -3,12 +3,26 @@
     {% for post in pagination.items %}
         <li class="post">
             <article>
-                <p class="postDateTime">
-                    <time datetime="{{ post.date }}">{{ post.date | dateFilter }}</time>
-                </p>
-                <h3 class="postTitle">
-                    <a href="/post/{{post.title | string | slug }}-{{ post.id | string | slug }}">{{ post.title }}</a>
-                </h3>
+                {% if site.useTitles %}
+                    <p class="postDateTime">
+                        <time datetime="{{ post.date }}">{{ post.date | dateFilter }}</time>
+                    </p>
+
+                    <h3 class="postTitle">
+                        <a href="/post/{{post.title | string | slug }}-{{ post.id | string | slug }}/">{{ post.title }}</a>
+                    </h3>
+
+                {% else %}
+
+                    <h3 class="postDateTime">
+                        <a href="/post/{{ post.id | string | slug }}/">
+                            <time datetime="{{ post.date }}">{{ post.date | dateFilter }}</time>
+                        </a>
+                    </h3>
+                    <section class="postContent">
+                        {{ post.content }}
+                    </section>
+                {% endif %}
             </article>
         </li>
     {% endfor %}
