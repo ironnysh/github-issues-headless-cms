@@ -46,23 +46,27 @@ async function getIssues(repository) {
     );
     if (json.length > 0) {
       let issues = await Promise.all(
-        json.map(async (issue) => {
-          return {
-            id: String(issue.id),
-            url: issue.html_url,
-            title: issue.title,
-            content: issue.body,
-            date: issue.created_at,
-            tags:
-              showLabels == true && issue.labels.length > 0
-                ? issue.labels
-                : false,
-            comments:
-              showComments == true && issue.comments > 0
-                ? await getComments(String(issue.number))
-                : false,
-          };
-        })
+        json
+          .filter(
+            (issue) => !issue.labels.some((label) => label.name == "no-publish")
+          )
+          .map(async (issue) => {
+            return {
+              id: String(issue.id),
+              url: issue.html_url,
+              title: issue.title,
+              content: issue.body,
+              date: issue.created_at,
+              tags:
+                showLabels == true && issue.labels.length > 0
+                  ? issue.labels
+                  : false,
+              comments:
+                showComments == true && issue.comments > 0
+                  ? await getComments(String(issue.number))
+                  : false,
+            };
+          })
       );
 
       // console.log(issues);
