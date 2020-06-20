@@ -8,5 +8,7 @@
   "showComments": true,
   "showLabels": true,
   "repository": "edjw/github-issues-headless-cms",
+  "allowedPostUserTypes": ["OWNER"],
+  "allowedCommentUserTypes": ["OWNER", "NONE"],
   "Cloudinary_Cloud_Name": "ed-johnson-williams"
 }
