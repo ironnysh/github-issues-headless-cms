@@ -19,7 +19,7 @@ title: {{ post.title | string }}
         {% endif %}
 
         <p class="postDateTime">
-            <time datetime="{{ post.date }}">{{ post.date | dateFilter }}</time>
+            <time datetime="{{ post.date | rssDate }}">{{ post.date | dateFilter | rssDate }}</time>
         </p>
 
         {% if post.content %}
