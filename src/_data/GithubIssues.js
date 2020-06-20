@@ -2,8 +2,6 @@ const siteSettings = require("./site.json");
 const repository = siteSettings.repository;
 const showComments = siteSettings.showComments;
 const showLabels = siteSettings.showLabels;
-const allowedPostUserTypes = siteSettings.allowedPostUserTypes;
-const allowedCommentUserTypes = siteSettings.allowedCommentUserTypes;
 
 const Cache = require("@11ty/eleventy-cache-assets");
 
@@ -18,20 +16,16 @@ async function getComments(issueNumber) {
     );
 
     let commentsToKeep = await Promise.all(
-      json
-        .filter((comment) =>
-          allowedCommentUserTypes.includes(comment.author_association)
-        )
-        .map(async (comment) => {
-          return {
-            id: String(comment.id),
-            url: comment.html_url,
-            user: comment.user.login,
-            userAvatar: comment.user.avatar_url,
-            content: comment.body,
-            date: comment.created_at,
-          };
-        })
+      json.map(async (comment) => {
+        return {
+          id: String(comment.id),
+          url: comment.html_url,
+          user: comment.user.login,
+          userAvatar: comment.user.avatar_url,
+          content: comment.body,
+          date: comment.created_at,
+        };
+      })
     );
     // console.log(commentsToKeep);
     return commentsToKeep;
@@ -54,9 +48,7 @@ async function getIssues(repository) {
       let issues = await Promise.all(
         json
           .filter(
-            (issue) =>
-              !issue.labels.some((label) => label.name == "no-publish") &&
-              allowedPostUserTypes.includes(issue.author_association)
+            (issue) => !issue.labels.some((label) => label.name == "no-publish")
           )
           .map(async (issue) => {
             return {
