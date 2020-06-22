@@ -15,6 +15,7 @@ module.exports = {
   "socialImageURL": "",
 
   // 
+  "useTitles": true,
   "showComments": true,
   "showLabels": true,
   "repository": "edjw/github-issues-headless-cms",
