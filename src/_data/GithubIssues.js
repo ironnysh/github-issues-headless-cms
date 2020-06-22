@@ -32,16 +32,6 @@ async function getComments(issueNumber) {
             date: comment.created_at,
           };
         })
-        .map(async (comment) => {
-          return {
-            id: String(comment.id),
-            url: comment.html_url,
-            user: comment.user.login,
-            userAvatar: comment.user.avatar_url,
-            content: comment.body,
-            date: comment.created_at,
-          };
-        })
     );
     // console.log(commentsToKeep);
     return commentsToKeep;
@@ -62,10 +52,12 @@ async function getIssues(repository) {
     );
     if (json.length > 0) {
       let issues = await Promise.all(
-        json.filter(
-          (issue) =>
-            !issue.labels.some((label) => label.name == "no-publish") &&
-            allowedPostUserTypes.includes(issue.author_association))
+        json
+          .filter(
+            (issue) =>
+              !issue.labels.some((label) => label.name == "no-publish") &&
+              allowedPostUserTypes.includes(issue.author_association)
+          )
           .map(async (issue) => {
             return {
               id: String(issue.id),
@@ -88,10 +80,10 @@ async function getIssues(repository) {
       // console.log(issues);
 
       return issues;
-    }
-
-    else {
-      console.warn("\n\n***No Github Issues found.You might need to add your Github repository in `_data/site.js` and add at least 1 issue to that repository.***\n\n")
+    } else {
+      console.warn(
+        "\n\n***No Github Issues found.You might need to add your Github repository in `_data/site.json` and add at least 1 issue to that repository.***\n\n"
+      );
     }
   } catch (error) {
     console.log(`${error}`);
