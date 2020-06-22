@@ -5,7 +5,7 @@
             <article>
                 {% if site.useTitles %}
                     <p class="postDateTime">
-                        <time datetime="{{ post.date | rssDate }}">{{ post.date | dateFilter | rssDate }}</time>
+                        <time datetime="{{ post.date }}">{{ post.date | dateFilter }}</time>
                     </p>
 
                     <h3 class="postTitle">
@@ -16,7 +16,7 @@
 
                     <h3 class="postDateTime">
                         <a href="/post/{{ post.id | string | slug }}/">
-                            <time datetime="{{ post.date | rssDate }}">{{ post.date | dateFilter | rssDate }}</time>
+                            <time datetime="{{ post.date }}">{{ post.date | dateFilter }}</time>
                         </a>
                     </h3>
                     <section class="postContent">
