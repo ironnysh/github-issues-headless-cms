@@ -1,4 +1,4 @@
-const siteSettings = require("./site.json");
+const siteSettings = require("./site.js");
 const repository = siteSettings.repository;
 const showComments = siteSettings.showComments;
 const showLabels = siteSettings.showLabels;
@@ -73,7 +73,7 @@ async function getIssues(repository) {
     }
 
     else {
-      console.warn("\n\n***No Github Issues found.You might need to add your Github repository in `_data/site.json` and add at least 1 issue to that repository.***\n\n")
+      console.warn("\n\n***No Github Issues found.You might need to add your Github repository in `_data/site.js` and add at least 1 issue to that repository.***\n\n")
     }
   } catch (error) {
     console.log(

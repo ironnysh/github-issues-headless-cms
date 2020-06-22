@@ -1,6 +1,6 @@
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
-const Cloudinary_Cloud_Name = require("../_data/site.json")
+const Cloudinary_Cloud_Name = require("../_data/site.js")
   .Cloudinary_Cloud_Name;
 
 module.exports = function (value, outputPath) {

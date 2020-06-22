@@ -8,7 +8,7 @@
     "debug": "cross-env DEBUG=* yarn eleventy",
     "clean:cache": "rm -rf .cache && yarn eleventy",
     "clean:build": "rm -rf _site",
-    "clean": "clean:build && clean:cache"
+    "clean": "yarn run clean:build && yarn run clean:cache"
   },
   "license": "MIT",
   "devDependencies": {
