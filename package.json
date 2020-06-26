@@ -19,6 +19,7 @@
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "html-minifier": "^4.0.0",
-    "jsdom": "^16.2.2"
+    "jsdom": "^16.2.2",
+    "luxon": "^1.24.1"
   }
 }
