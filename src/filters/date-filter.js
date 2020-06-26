@@ -19,12 +19,13 @@ const appendDateSuffix = (n) => {
 //   return `${formattedDate} ${formattedMonthYear} at ${formattedTime}`;
 // };
 module.exports = (value) => {
-  const dateObject = DateTime.fromISO(value);
+  const dateObject = DateTime.fromISO(value, {
+    locale: locale,
+    zone: timeZone,
+  });
 
-  const formattedDate = appendDateSuffix(
-    dateObject.setLocale(locale).toFormat("d")
-  );
-  const formattedMonthYear = dateObject.setLocale(locale).toFormat("MMMM yyyy");
-  const formattedTime = dateObject.setLocale(locale).toFormat("T");
+  const formattedDate = appendDateSuffix(dateObject.toFormat("d"));
+  const formattedMonthYear = dateObject.toFormat("MMMM yyyy");
+  const formattedTime = dateObject.toFormat("T");
   return `${formattedDate} ${formattedMonthYear} at ${formattedTime}`;
 };
