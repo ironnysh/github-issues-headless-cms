@@ -14,11 +14,9 @@ module.exports = {
   // The URL where your website will be published
   url: "https://github-issues-headless-cms.netlify.app",
 
-  locale: {
-    locale: "en-GB",
-    timeZone: "Europe/London",
-    // timeZone: "America/Los_Angeles",
-  },
+  // Set the timezone you want dates and times to be in. Default is Europe/London.
+  // A list is here https://timezonedb.com/time-zones
+  // timeZone: "Europe/London",
 
   // Which Github repository's issues list do you want to use? username/repository-name
   repository: "edjw/github-issues-headless-cms",
@@ -26,7 +24,7 @@ module.exports = {
   // Uncomment this if your Github repository is private
   // repositoryVisibility: "private",
 
-  // If you want to use Cloudinary for your images, what is your Cloudinary cloud name? (optional)
+  // If you want to use Cloudinary for your images, what is your Cloudinary cloud name?
   Cloudinary_Cloud_Name: "ed-johnson-williams",
 
   // The URL where a social image for your site is published

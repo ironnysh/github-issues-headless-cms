@@ -1,6 +1,6 @@
 const { DateTime } = require("luxon");
 const siteSettings = require("../_data/site.js");
-const { locale, timeZone } = siteSettings.locale;
+const timeZone = siteSettings.timeZone || "Europe/London";
 
 const appendDateSuffix = (n) => {
   const s = ["th", "st", "nd", "rd"],
@@ -10,7 +10,6 @@ const appendDateSuffix = (n) => {
 
 module.exports = (value) => {
   const dateObject = DateTime.fromISO(value, {
-    locale: locale,
     zone: timeZone,
   });
 
