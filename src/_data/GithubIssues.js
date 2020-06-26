@@ -1,9 +1,15 @@
 const siteSettings = require("./site.js");
+const repositoryVisibility = siteSettings.repositoryVisibility || "public";
+if (repositoryVisibility === "private") {
+  require("dotenv").config({ path: "src/.env" });
+}
 const repository = siteSettings.repository;
-const showComments = siteSettings.showComments;
-const showLabels = siteSettings.showLabels;
-const allowedPostUserTypes = siteSettings.allowedPostUserTypes;
-const allowedCommentUserTypes = siteSettings.allowedCommentUserTypes;
+const showComments = siteSettings.showComments || false;
+const showLabels = siteSettings.showLabels || false;
+const allowedPostUserTypes = siteSettings.allowedPostUserTypes || ["OWNER"];
+const allowedCommentUserTypes = siteSettings.allowedCommentUserTypes || [
+  "OWNER",
+];
 
 const Cache = require("@11ty/eleventy-cache-assets");
 
@@ -42,12 +48,21 @@ async function getComments(issueNumber) {
 }
 
 async function getIssues(repository) {
+  const headers = {};
+
+  if (repositoryVisibility === "private") {
+    headers.authorization = `token ${process.env.GITHUB_TOKEN}`;
+  }
+
   try {
     let json = await Cache(
       `https://api.github.com/repos/${repository}/issues`,
       {
         duration: "1d",
         type: "json",
+        fetchOptions: {
+          headers,
+        },
       }
     );
     if (json.length > 0) {
@@ -82,7 +97,7 @@ async function getIssues(repository) {
       return issues;
     } else {
       console.warn(
-        "\n\n***No Github Issues found.You might need to add your Github repository in `_data/site.json` and add at least 1 issue to that repository.***\n\n"
+        "\n\n***No Github Issues found. You might need to add your Github repository in `_data/site.json` and add at least 1 issue to that repository.***\n\n"
       );
     }
   } catch (error) {
