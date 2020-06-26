@@ -19,7 +19,9 @@ title: {{ post.title | string }}
         {% endif %}
 
         <p class="postDateTime">
-            <time datetime="{{ post.date }}">{{ post.date | dateFilter }}</time>
+            <a href="{{ post.url }}">
+                <time datetime="{{ post.date }}">{{ post.date | dateFilter }}</time>
+            </a>
         </p>
 
         {% if post.content %}
@@ -35,10 +37,6 @@ title: {{ post.title | string }}
             </ul>
         {% endif %}
 
-        <p>
-            <a href="{{ post.url }}">See post on Github</a>
-        </p>
-
         {% if post.comments %}
 
             <ul class="commentsList">
@@ -51,17 +49,19 @@ title: {{ post.title | string }}
                             <a href="https://github.com/{{ comment.user }}">{{ comment.user }}</a>
                         </p>
                         <p class="commentDateTime">
-                            <time datetime="{{ comment.date }}">{{ comment.date | dateFilter }}</time>
+                            <a class="commentURL" href="{{ comment.url}}">
+                                <time datetime="{{ comment.date }}">{{ comment.date | dateFilter }}</time>
+                            </a>
                         </p>
                         <p class="commentContent">{{ comment.content | markdownify | safe }}</p>
-                        <p>
-                            <a class="commentURL" href="{{ comment.url}}">See original comment</a>
-                        </p>
+
                     </li>
                 {% endfor %}
             </ul>
 
-            <a href="https://github.com/edjw/github-issue-blog/issues/{{ post.id | string }}#issue-comment-box">Leave a comment</a>
+            <section>
+                <a href="https://github.com/edjw/github-issue-blog/issues/{{ post.id | string }}#issue-comment-box">Leave a comment</a>
+            </section>
         {% endif %}
     </article>
 {% endblock %}
