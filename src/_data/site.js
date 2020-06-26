@@ -14,6 +14,12 @@ module.exports = {
   // The URL where your website will be published
   url: "https://github-issues-headless-cms.netlify.app",
 
+  // locale: {
+  //   locale: "en-GB",
+  //   timeZone: "Europe/London",
+  //   // timeZone: "America/Los_Angeles",
+  // },
+
   // Which Github repository's issues list do you want to use? username/repository-name
   repository: "edjw/github-issues-headless-cms",
 

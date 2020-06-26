@@ -1,8 +1,8 @@
 const { DateTime } = require("luxon");
-const siteSettings = require("../_data/site.js");
+// const siteSettings = require("../_data/site.js");
 // const locale = siteSettings.locale.locale;
 // const locale = "UTC";
-const timeZone = siteSettings.locale.timeZone;
+// const timeZone = siteSettings.locale.timeZone;
 
 const appendDateSuffix = (n) => {
   const s = ["th", "st", "nd", "rd"],
