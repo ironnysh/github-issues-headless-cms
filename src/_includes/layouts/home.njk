@@ -5,6 +5,8 @@
 
     {% include "partials/recentPosts.njk" %}
     {% if GithubIssues | length > 4 %}
-        <a href="/posts" class="see_all">See all posts</a>
+        <section class="see_all">
+            <a href="/posts">See all posts</a>
+        </section>
     {% endif %}
 {% endblock %}
