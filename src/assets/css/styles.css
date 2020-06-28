@@ -2,14 +2,14 @@
   --black: #212121;
   --white: #fdfdfd;
   --grey: #4f5a65;
-  --red: #a72146;
-  --blue: #004777;
+  --primary: #a72146;
+  --secondary: #004777;
   --box-shadow-color: hsla(0, 0%, 0%, 0.2);
   --box-shadow-size: 0 4px 6px 0;
 }
 
 ::selection {
-  background-color: var(--blue);
+  background-color: var(--secondary);
   color: var(--white);
 }
 
@@ -32,7 +32,7 @@ body {
   color: var(--black);
 }
 a {
-  color: var(--red);
+  color: var(--primary);
 }
 
 pre {
@@ -42,7 +42,7 @@ pre {
 }
 
 blockquote {
-  border-left: 5px solid var(--blue);
+  border-left: 5px solid var(--secondary);
   padding: 0.5rem 0 0.5rem 1rem;
   margin: 1.5rem 0;
 }
