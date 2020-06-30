@@ -4,7 +4,7 @@ const markdownify = require("./src/filters/markdownify.js");
 const customSlug = require("./src/filters/customSlug.js");
 const cssmin = require("./src/filters/cssmin.js");
 const htmlMin = require("./src/transforms/html-min.js");
-const Cloudinary_Cloud_Name = require("./src/_data/site.js")
+const Cloudinary_Cloud_Name = require("./src/_data/siteSettings.js")
   .Cloudinary_Cloud_Name;
 const markdownImagesToCloudinary = require("./src/transforms/markdownImagesToCloudinary.js");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
