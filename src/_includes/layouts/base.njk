@@ -6,13 +6,18 @@
         {% include "partials/metatags.njk" %}
 
         {% set css %}
-        {% include "../../assets/css/reset.css" %}
-        {% include "../../assets/css/styles.css" %}
+        {% include "../../assets/css/allStyles.njk" %}
         {% endset %}
+
         <style>
-            {{css | cssmin | safe}}
+            {% if env.env == "development" %}
+                {{css | safe}}
+            {% else %}
+                {{css | cssmin | safe}}
+            {% endif %}
         </style>
     </head>
+
     <body class="container">
         {% include "partials/header.njk" %}
 
@@ -21,7 +26,7 @@
         </main>
 
         <footer>
-            <p>See all the posts on this website on <a href="https://github.com/{{ site.repository }}/issues">their original Github Issues list</a>
+            <p>See all the posts on this website on <a href="https://github.com/{{ siteSettings.repository }}/issues">their original Github Issues list</a>
             </p>
         </footer>
     </body>

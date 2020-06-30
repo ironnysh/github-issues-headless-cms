@@ -3,7 +3,7 @@
     {% for post in pagination.items %}
         <li class="post">
             <article>
-                {% if site.useTitles %}
+                {% if siteSettings.useTitles %}
                     <p class="postDateTime">
                         <time datetime="{{ post.date }}">{{ post.date | dateFilter }}</time>
                     </p>

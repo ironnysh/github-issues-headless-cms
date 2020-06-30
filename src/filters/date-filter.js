@@ -1,5 +1,5 @@
 const { DateTime } = require("luxon");
-const siteSettings = require("../_data/site.js");
+const siteSettings = require("../_data/siteSettings.js");
 const timeZone = siteSettings.timeZone || "Europe/London";
 
 const appendDateSuffix = (n) => {

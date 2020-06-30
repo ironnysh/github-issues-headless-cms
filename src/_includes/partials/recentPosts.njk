@@ -12,7 +12,7 @@
     {% for i in range(0, numberOfPosts) %}
         <li class="post">
             <article>
-                {% if site.useTitles %}
+                {% if siteSettings.useTitles %}
 
                     <p class="postDateTime">
                         <time datetime="{{ GithubIssues[i].date }}">{{ GithubIssues[i].date | dateFilter }}</time>

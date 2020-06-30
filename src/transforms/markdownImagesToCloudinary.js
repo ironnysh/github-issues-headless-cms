@@ -1,7 +1,7 @@
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 // const probeImage = require("probe-image-size");
-const Cloudinary_Cloud_Name = require("../_data/site.js").Cloudinary_Cloud_Name;
+const Cloudinary_Cloud_Name = require("../_data/siteSettings.js").Cloudinary_Cloud_Name;
 
 module.exports = async function (value, outputPath) {
   // async function getImageDimensions(imageURL) {

@@ -1,4 +1,4 @@
-const siteSettings = require("./site.js");
+const siteSettings = require("./siteSettings.js");
 const repositoryVisibility = siteSettings.repositoryVisibility || "public";
 if (repositoryVisibility === "private") {
   require("dotenv").config({ path: "src/.env" });
@@ -97,7 +97,7 @@ async function getIssues(repository) {
       return issues;
     } else {
       console.warn(
-        "\n\n***No Github Issues found. You might need to add your Github repository in `_data/site.json` and add at least 1 issue to that repository.***\n\n"
+        "\n\n***No Github Issues found. You might need to add your Github repository in `_data/siteSettings.json` and add at least 1 issue to that repository.***\n\n"
       );
     }
   } catch (error) {
