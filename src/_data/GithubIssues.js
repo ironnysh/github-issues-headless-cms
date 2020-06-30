@@ -34,7 +34,7 @@ async function getComments(issueNumber) {
             url: comment.html_url,
             user: comment.user.login,
             userAvatar: comment.user.avatar_url,
-            content: comment.body,
+            commentContent: comment.body,
             date: comment.created_at,
           };
         })
@@ -78,7 +78,7 @@ async function getIssues(repository) {
               id: String(issue.id),
               url: issue.html_url,
               title: issue.title,
-              content: issue.body,
+              postContent: issue.body,
               date: issue.created_at,
               tags:
                 showLabels == true && issue.labels.length > 0

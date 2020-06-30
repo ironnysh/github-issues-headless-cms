@@ -25,7 +25,7 @@ title: {{ post.title | string }}
         </p>
 
         {% if post.content %}
-            {{ post.content | markdownify | safe }}
+            <section class="postContent">{{ post.postContent | markdownify | safe }}</section>
         {% endif %}
 
         {% if post.tags %}
@@ -53,7 +53,7 @@ title: {{ post.title | string }}
                                 <time datetime="{{ comment.date }}">{{ comment.date | dateFilter }}</time>
                             </a>
                         </p>
-                        <p class="commentContent">{{ comment.content | markdownify | safe }}</p>
+                        <p class="commentContent">{{ comment.commentContent | markdownify | safe }}</p>
 
                     </li>
                 {% endfor %}
