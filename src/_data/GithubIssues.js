@@ -70,7 +70,7 @@ async function getIssues(repository) {
         json
           .filter(
             (issue) =>
-              !issue.labels.some((label) => label.name == "no-publish") &&
+              !issue.labels.some((label) => label.name == "no-publish" || label.name == "draft") &&
               allowedPostUserTypes.includes(issue.author_association)
           )
           .map(async (issue) => {

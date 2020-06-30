@@ -1,8 +1,8 @@
 ---
 name: Draft post
-about: A draft post that isn't ready for immediate publication
+about: A draft post not ready for immediate publication
 title: ''
-labels: draft
+labels: "draft"
 assignees: ''
 
 ---
