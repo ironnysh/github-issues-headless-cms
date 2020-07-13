@@ -4,9 +4,5 @@
     {{ content | safe }}
 
     {% include "partials/recentPosts.njk" %}
-    {% if GithubIssues | length > 4 %}
-        <section class="see_all">
-            <a href="/posts">See all posts</a>
-        </section>
-    {% endif %}
+    
 {% endblock %}

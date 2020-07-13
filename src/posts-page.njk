@@ -29,17 +29,18 @@ title: {{ post.title | string }}
         {% endif %}
 
         {% if post.tags %}
-            <p>Tags</p>
+            <h3>Tags</h3>
             <ul class="tagList">
                 {% for tag in post.tags %}
-                    <li class="tag">{{ tag.name }}</li>
+                    <li class="tag">
+                        <span>{{ tag.name }}</span></li>
                 {% endfor %}
             </ul>
         {% endif %}
 
         {% if post.comments %}
 
-        <h3>Comments</h3>
+            <h3>Comments</h3>
 
             <ul class="commentsList">
                 {% for comment in post.comments %}

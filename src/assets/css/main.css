@@ -56,7 +56,7 @@ blockquote {
 
 .container {
   max-width: 35rem;
-  margin: 0 auto;
+  margin: 0 auto 1rem;
   padding: 0 1rem;
 }
 
@@ -81,6 +81,10 @@ footer {
   margin-top: 1rem;
 }
 
+.pageTitle {
+  color: var(--secondary);
+}
+
 .postTitle {
   margin-top: 0;
 }
@@ -89,6 +93,18 @@ ul.tagList {
   margin-top: 1rem;
 }
 
+.tag span {
+  background-color: var(--secondary);
+  color: var(--white);
+  padding: 0.125rem 0.75rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
 .see_all {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+}
+
+.see_all a {
+  color: var(--secondary);
 }
