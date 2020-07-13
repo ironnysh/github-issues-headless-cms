@@ -3,6 +3,7 @@ const dateFilter = require("./src/filters/date-filter.js");
 const markdownify = require("./src/filters/markdownify.js");
 const customSlug = require("./src/filters/customSlug.js");
 const cssmin = require("./src/filters/cssmin.js");
+const HTMLstripped = require("./src/filters/HTMLstripped.js");
 const htmlMin = require("./src/transforms/html-min.js");
 const Cloudinary_Cloud_Name = require("./src/_data/siteSettings.js")
   .Cloudinary_Cloud_Name;
@@ -10,11 +11,13 @@ const markdownImagesToCloudinary = require("./src/transforms/markdownImagesToClo
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function (eleventyConfig) {
+  
   // Filters
   eleventyConfig.addFilter("dateFilter", dateFilter);
   eleventyConfig.addFilter("markdownify", markdownify);
   eleventyConfig.addFilter("cssmin", cssmin);
   eleventyConfig.addFilter("slug", customSlug);
+  eleventyConfig.addFilter("HTMLstripped", HTMLstripped);
 
   // Transforms
   if (env === "production") {

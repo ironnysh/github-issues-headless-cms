@@ -1,3 +1,5 @@
+// You can put design tokens in here if you want
+
 module.exports = {
 
   colours: {
@@ -7,4 +9,5 @@ module.exports = {
     primary: "#a72146",
     secondary: "#004777"
   }
+
 }

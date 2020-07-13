@@ -13,14 +13,12 @@
     <section class="pagination">
         {% if paginationPrevUrl %}
             <a href="{{ paginationPrevUrl }}" data-direction="backwards" class="button">
-                {# {% include "icons/arrow.svg" %} #}
                 <span>Newer posts</span>
             </a>
         {% endif %}
         {% if paginationNextUrl %}
             <a href="{{ paginationNextUrl }}" data-direction="forwards" class="button">
                 <span>Older posts</span>
-                {# {% include "icons/arrow.svg" %} #}
             </a>
         {% endif %}
     </section>

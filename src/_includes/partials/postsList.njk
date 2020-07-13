@@ -20,7 +20,7 @@
                         </a>
                     </h3>
                     <section class="postContent">
-                        {{ post.content }}
+                        {{ post.postContent | markdownify | safe }}
                     </section>
                 {% endif %}
             </article>

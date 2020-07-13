@@ -24,7 +24,7 @@ title: {{ post.title | string }}
             </a>
         </p>
 
-        {% if post.content %}
+        {% if post.postContent %}
             <section class="postContent">{{ post.postContent | markdownify | safe }}</section>
         {% endif %}
 
@@ -38,6 +38,8 @@ title: {{ post.title | string }}
         {% endif %}
 
         {% if post.comments %}
+
+        <h3>Comments</h3>
 
             <ul class="commentsList">
                 {% for comment in post.comments %}

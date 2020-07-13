@@ -1,5 +1,5 @@
 ---
-permalink: "feed.xml"
+permalink: "plain-text-feed.xml"
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
@@ -23,12 +23,11 @@ eleventyExcludeFromCollections: true
 
             {% if post.data.post.postContent %}
 
-                <content type="html">
-                    <![CDATA[ {{ post.data.post.postContent | markdownify | safe }} ]]>
+                <content>
+                    {{ post.data.post.postContent | markdownify | HTMLstripped | safe }}
                 </content>
 
             {% endif %}
-
 
         </entry>
     {%- endfor %}

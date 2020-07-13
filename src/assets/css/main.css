@@ -21,8 +21,17 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   color: var(--black);
 }
+
 a {
   color: var(--primary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.1;
 }
 
 pre {
@@ -48,6 +57,19 @@ blockquote {
 .container {
   max-width: 35rem;
   margin: 0 auto;
+  padding: 0 1rem;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+header .siteTitle {
+  margin-bottom: 1rem;
+}
+
+header .siteSubtitle {
+  line-height: 1.2;
 }
 
 footer {

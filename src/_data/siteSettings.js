@@ -4,12 +4,15 @@ module.exports = {
   // The title of your website
   title: "Github Issues as a CMS",
 
+  // The subtitle of your website (optional)
+  subtitle: "A blog that uses a Github repository's issues as a headless CMS. On this site, it's just the outstanding issues on this project but you could put anything in the issues: blogposts, microblog posts to syndicate to Twitter, images, anything",
+
   // Your name
   author: "Ed Johnson-Williams",
 
-  // A description of your website
+  // A description of your website (This is used for default social media descriptions)
   description:
-    "A blog that uses a Github repository's issues as a headless CMS",
+    "A blog that uses a Github repository's issues as a headless CMS.",
 
   // The URL where your website will be published
   url: "https://github-issues-headless-cms.netlify.app",
@@ -24,7 +27,7 @@ module.exports = {
   // Uncomment this if your Github repository is private
   // repositoryVisibility: "private",
 
-  // If you want to use Cloudinary for your images, what is your Cloudinary cloud name?
+  // If you want to use Cloudinary for your images, what is your Cloudinary cloud name? (optional)
   Cloudinary_Cloud_Name: "ed-johnson-williams",
 
   // The URL where a social image for your site is published
@@ -39,7 +42,7 @@ module.exports = {
   // Who do you want to allow to post? ["OWNER"] means just you. ["OWNER", "COLLABORATOR"] means you and anyone you've added to the repository. ["OWNER", "COLLABORATOR", "NONE"] means you, anyone you've added to the repository, and all Github users
   allowedPostUserTypes: ["OWNER"],
 
-  // Who do you want to allow to comment?
+  // Who do you want to allow to comment? ["OWNER", "NONE"] means you and all Github users
   allowedCommentUserTypes: ["OWNER", "NONE"],
 
   // Show Github labels as tags? (true or false)
