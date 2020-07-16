@@ -5,7 +5,8 @@ module.exports = {
   title: "Github Issues as a CMS",
 
   // The subtitle of your website (optional)
-  subtitle: "A blog that uses a Github repository's issues as a headless CMS. On this site, it's just the outstanding issues on this project but you could put anything in the issues: blogposts, microblog posts to syndicate to Twitter, images, anything",
+  subtitle:
+    "A blog that uses a Github repository's issues as a headless CMS. On this site, it's just the outstanding issues on this project but you could put anything in the issues: blogposts, microblog posts to syndicate to Twitter, images, anything",
 
   // Your name
   author: "Ronny Shani",
@@ -15,7 +16,7 @@ module.exports = {
     "A blog that uses a Github repository's issues as a headless CMS.",
 
   // The URL where your website will be published
-  url: "https://github-issues-headless-cms.netlify.app",
+  url: "https://angry-williams-607850.netlify.app",
 
   // Set the timezone you want dates and times to be in. Default is Europe/London.
   // A list is here https://timezonedb.com/time-zones
