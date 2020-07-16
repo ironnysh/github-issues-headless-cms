@@ -19,7 +19,7 @@
                             <time datetime="{{ post.date }}">{{ post.date | dateFilter }}</time>
                         </a>
                     </h3>
-                    <section class="postContent">
+                    <section dir="auto" class="postContent">
                         {{ post.postContent | markdownify | safe }}
                     </section>
                 {% endif %}
