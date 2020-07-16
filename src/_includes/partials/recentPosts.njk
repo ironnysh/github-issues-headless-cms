@@ -28,7 +28,7 @@
                             <time datetime="{{ GithubIssues[i].date }}">{{ GithubIssues[i].date | dateFilter }}</time>
                         </a>
                     </h3>
-                    <section class="postContent">
+                    <section dir="auto" class="postContent">
                         {{ GithubIssues[i].postContent | markdownify | safe }}
                     </section>
 
