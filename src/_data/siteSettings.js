@@ -8,7 +8,7 @@ module.exports = {
   subtitle: "A blog that uses a Github repository's issues as a headless CMS. On this site, it's just the outstanding issues on this project but you could put anything in the issues: blogposts, microblog posts to syndicate to Twitter, images, anything",
 
   // Your name
-  author: "Ed Johnson-Williams",
+  author: "Ronny Shani",
 
   // A description of your website (This is used for default social media descriptions)
   description:
@@ -22,13 +22,13 @@ module.exports = {
   // timeZone: "Europe/London",
 
   // Which Github repository's issues list do you want to use? username/repository-name
-  repository: "edjw/github-issues-headless-cms",
+  repository: "ironnysh/github-issues-headless-cms",
 
   // Uncomment this if your Github repository is private
   // repositoryVisibility: "private",
 
   // If you want to use Cloudinary for your images, what is your Cloudinary cloud name? (optional)
-  Cloudinary_Cloud_Name: "ed-johnson-williams",
+  Cloudinary_Cloud_Name: "",
 
   // The URL where a social image for your site is published
   socialImageURL: "",
