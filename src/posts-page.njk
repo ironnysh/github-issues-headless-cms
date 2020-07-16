@@ -25,7 +25,7 @@ title: {{ post.title | string }}
         </p>
 
         {% if post.postContent %}
-            <section class="postContent">{{ post.postContent | markdownify | safe }}</section>
+            <section dir="auto" class="postContent">{{ post.postContent | markdownify | safe }}</section>
         {% endif %}
 
         {% if post.tags %}
