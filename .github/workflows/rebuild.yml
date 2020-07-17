@@ -11,4 +11,4 @@ jobs:
     - name: Trigger Netlify Hook
       run: curl -X POST ${{ secrets.netlify_rebuild }}
     - name: Trigger Vercel Hook
-      run: curl -X POST ${{ secrets.issues_vercel }}
+      run: curl -X POST ${{ secrets.ISSUES_VERCEL }}
