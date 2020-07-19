@@ -3,3 +3,4 @@ _site
 .cache
 .netlify
 .env
+package-lock.json
