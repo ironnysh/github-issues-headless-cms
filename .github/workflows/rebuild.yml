@@ -1,4 +1,4 @@
-name: Netlify Deploy
+name: Netlify & Vercel Deploy
 
 on:
   issues:
@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Trigger Netlify Hook
-      run: curl -X POST ${{ secrets.netlify_rebuild }}
+      run: curl -X POST ${{ secrets.NETLIFY_REBUILD }}
     - name: Trigger Vercel Hook
-      run: curl -X POST ${{ secrets.ISSUES_VERCEL }}
+      run: curl -X POST ${{ secrets.VERCEL_REBUILD }}
