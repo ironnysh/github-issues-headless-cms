@@ -13,4 +13,4 @@ jobs:
     - name: Trigger Vercel Hook
       run: curl -X POST ${{ secrets.VERCEL_REBUILD }}
     - name: Trigger Render Hook
-      run: curl -X POST ${{ secrets.RENDER_BUILD }}
+      run: POST ${{ secrets.RENDER_BUILD }}
