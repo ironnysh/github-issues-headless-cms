@@ -10,7 +10,5 @@ jobs:
     steps:
     - name: Trigger Netlify Hook
       run: curl -X POST ${{ secrets.NETLIFY_REBUILD }}
-    - name: Trigger Vercel Hook
-      run: curl -X POST ${{ secrets.VERCEL_REBUILD }}
     - name: Trigger Render Hook
       run: POST ${{ secrets.RENDER_BUILD }}
