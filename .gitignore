@@ -4,3 +4,4 @@ _site
 .netlify
 .env
 package-lock.json
+.DS_Store
